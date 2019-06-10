@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Demo"
+             xmlns:controls="clr-namespace:Demo.Controls"
+             xmlns:mvvms="clr-namespace:Demo.ViewModels"
+             x:Class="Demo.Views.ViewChekListPage">
+
+
+    <ListView ItemsSource="{Binding CheckListsVMPro}"  SeparatorVisibility="None" HasUnevenRows="true">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <controls:ToDoListCell CheckListItemTappedCommandPros="{Binding CheckListItemTappedCommandValue}"  CheckListPros="{Binding CheckListValue}" />
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

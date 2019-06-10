@@ -1,0 +1,7 @@
+<?PHP
+
+echo '<a href="/report/analysisDocStatusRate.php">analysisDocStatusRate</a><br>';
+echo '<a href="/report/analysisDocByInspector.php">analysisDocByInspector</a><br>';
+echo '<a href="/report/getOpenSerialNo.php">getOpenSerialNo.php</a><br>';
+
+?>

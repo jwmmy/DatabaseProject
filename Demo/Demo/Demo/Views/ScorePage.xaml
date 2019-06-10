@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.Views.ScorePage"
+            xmlns:ctrls="clr-namespace:Demo.Controls"
+             >
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Always">
+        <!--<Label x:Name="label_ItemDesc" Text="{Binding CheckItemValue.IChk_Item_Desc}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />-->
+            <StackLayout x:Name="stackPanel" Margin="20">
+                <Label Text="Please Select the status of this checkpoint " FontSize="25" FontAttributes="Bold" />
+   
+                <ctrls:RadioButton x:Name="cbOK" Title="OK" IsChecked="{Binding CheckBox_Ok_Value,Mode=TwoWay}" BorderImageSource="radioborder" CheckedBackgroundImageSource="radiocheckedbg" CheckmarkImageSource="radiocheckmark" />
+                <ctrls:RadioButton x:Name="cbFail" Title="NG" IsChecked="{Binding CheckBox_Ng_Value,Mode=TwoWay}" BorderImageSource="radioborder" CheckedBackgroundImageSource="radiocheckedbg" CheckmarkImageSource="radiocheckmark" />
+                <ctrls:RadioButton x:Name="cbNone" Title="PASSABLY " IsChecked="{Binding CheckBox_Soso_Value,Mode=TwoWay}" BorderImageSource="radioborder" CheckedBackgroundImageSource="radiocheckedbg" CheckmarkImageSource="radiocheckmark" />
+                <Button IsEnabled="{Binding EnableCommitValue}" BackgroundColor="LimeGreen" Text="Commit" Command="{Binding CommitCommand}"></Button>
+                <Button IsVisible="{Binding CheckBox_Ng_Value,Mode=OneWay}" Text="Take a photo of this checkpoint" Command="{Binding TakePhotoCommand}"></Button>
+
+
+                <Image Aspect="AspectFit" IsVisible="{Binding CheckBox_Ng_Value,Mode=OneWay}"  HorizontalOptions="Center" VerticalOptions="Center"  Source="{Binding MyImageSource}"/>
+             
+            </StackLayout>
+            
+      
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
